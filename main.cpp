@@ -28,7 +28,11 @@ public:
   double* get_params(){
      return params;
   }
-
+  ~Base(){
+    if(params){
+      delete [] params;
+    }
+  }
   /*void print_info(Base* pbase) {
     std::cout << pbase->get_name() << ": "
               << "\n";
